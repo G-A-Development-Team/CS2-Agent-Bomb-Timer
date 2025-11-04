@@ -209,7 +209,7 @@ callbacks.Register("Draw", "BombTimer_Draw", function()
                 end
             end
             draw.Color(r, g, b, a)
-            if dmg < 100 then
+            if not lethal then
                 label = label .. " Damage"
             end
             local tw, th = draw.GetTextSize(label)
