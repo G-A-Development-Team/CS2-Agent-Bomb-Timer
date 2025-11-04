@@ -172,7 +172,7 @@ callbacks.Register("Draw", "BombTimer_Draw", function()
 
     if c4_unplanted then
         local c4ent = c4_unplanted
-        local owner = c4ent:GetFieldEntity("m_hOwnerEntity") or c4ent:GetPropEntity("m_hOwnerEntity")
+        local owner = c4ent:GetFieldEntity("m_hOwnerEntity")
         if owner and owner:GetIndex() == lp:GetIndex() then
             local c4w = C4(c4ent)
             if c4w and (c4w:Planting() or c4w:PlantingAlt()) then
