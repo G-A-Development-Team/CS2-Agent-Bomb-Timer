@@ -156,14 +156,11 @@ callbacks.Register("Draw", "BombTimer_Draw", function()
 
     -- Planting (local-only)
     local g = Game()
-    local c4_unplanted = g:GetFirstBomb()
+    local c4 = g:GetFirstBomb()
     local c4planted = g:GetFirstPlantedBomb()
 
-    if c4_unplanted then
-        local c4ent = c4_unplanted
-        local owner = c4ent:GetFieldEntity("m_hOwnerEntity")
-        if owner and owner:GetIndex() == lp:GetIndex() then
-            local c4w = C4(c4ent)
+    if c4 then
+            local c4w = C4(c4)
             if c4w and (c4w:Planting() or c4w:PlantingAlt()) then
                 local armed_time = c4w:PlantingTime() or 0
                 local duration = 4.0 -- standard plant time
@@ -173,7 +170,6 @@ callbacks.Register("Draw", "BombTimer_Draw", function()
                 draw_bar(x, y, bar_w, bar_h, frac, UI.colors.plant, "", ("%0.2fs"):format(math.max(0, remain)))
                 y = y + bar_h + pad
             end
-        end
     end
 
     -- Planted bomb
@@ -191,7 +187,7 @@ callbacks.Register("Draw", "BombTimer_Draw", function()
         y = y + math.floor(UI.timer_padding_base * scale)
 
         -- Centered damage indicator just above the bomb timer bar
-        do
+        
             
             draw.SetFont( fatal_font )
             local dmg, lethal = BombDMG(c4planted, LocalPlayer())
@@ -218,7 +214,7 @@ callbacks.Register("Draw", "BombTimer_Draw", function()
             end
             local tw, th = draw.GetTextSize(label)
             draw.Text(x + math.floor((bar_w - tw) / 2), y - math.max(4, math.floor(th * 1.1)), label)
-        end
+        
 
         draw.SetFont(bomb_font)
 
