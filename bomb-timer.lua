@@ -188,7 +188,8 @@ callbacks.Register("Draw", "BombTimer_Draw", function()
 
         -- Centered damage indicator just above the bomb timer bar
         
-            
+            local lpo = player( lp )
+        if lpo:Alive() then
             draw.SetFont( fatal_font )
             local dmg, lethal = BombDMG(c4planted, LocalPlayer())
             local label
@@ -198,11 +199,11 @@ callbacks.Register("Draw", "BombTimer_Draw", function()
                 r, g, b = 255, 0, 0 -- red
             else
                 label = tostring(dmg)
-                if dmg >= 100 then
+                if dmg >= lpo:Health() then
                     r, g, b = 255, 0, 0      -- red
-                elseif dmg >= 75 then
+                elseif dmg >= lpo:Health()*0.75 then
                     r, g, b = 255, 140, 0     -- orange
-                elseif dmg >= 35 then
+                elseif dmg >= lpo:Health()*0.35 then
                     r, g, b = 240, 220, 80    -- yellow
                 else
                     r, g, b = 80, 200, 120     -- green
@@ -214,7 +215,7 @@ callbacks.Register("Draw", "BombTimer_Draw", function()
             end
             local tw, th = draw.GetTextSize(label)
             draw.Text(x + math.floor((bar_w - tw) / 2), y - math.max(4, math.floor(th * 1.1)), label)
-        
+        end
 
         draw.SetFont(bomb_font)
 
