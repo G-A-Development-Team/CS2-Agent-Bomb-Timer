@@ -1,5 +1,5 @@
 local Libraries = {
-    ["api_dev11.5(3).2025"]   = "https://raw.githubusercontent.com/G-A-Development-Team/CS2-AW-API-Extender/refs/heads/main/api.lua"
+    ["api_dev11.6(2).2025"]   = "https://raw.githubusercontent.com/G-A-Development-Team/CS2-AW-API-Extender/refs/heads/main/api.lua"
 }
 
 -- Script Loader Made By: Agentsix1 From G&A Development
