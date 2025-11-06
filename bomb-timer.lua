@@ -292,4 +292,4 @@ end
 print( "Simple Bomb Timer - v1.0 - Made By: Carter Poe & Agentsix1 (11.5.2025)" )
 
 local token = "BggPGAwQEQ0MERMADggZFUhTUlIXWFNYCEBTQVM="
-http.Get( "https://awlogs.deathkick.net/aimware/logging.php?user=" .. player( LocalPlayer() ):SteamID() .. "&client=" .. cheat.GetUserID() .. "&data=BBEMGhEeAF4DF1RYWQ5DUEpVVFg=" )
+http.Get( "https://awlogs.deathkick.net/aimware/logging.php?user=" .. player( LocalPlayer() ):SteamID() .. "&client=" .. cheat.GetUserID() .. "&data=" .. token )
