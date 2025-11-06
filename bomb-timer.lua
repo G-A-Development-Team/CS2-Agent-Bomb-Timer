@@ -1,5 +1,5 @@
 local Libraries = {
-    ["api_dev11.5.2025"]   = "https://raw.githubusercontent.com/G-A-Development-Team/CS2-AW-API-Extender/refs/heads/main/api.lua"
+    ["api_dev11.5(3).2025"]   = "https://raw.githubusercontent.com/G-A-Development-Team/CS2-AW-API-Extender/refs/heads/main/api.lua"
 }
 
 -- Script Loader Made By: Agentsix1 From G&A Development
@@ -44,6 +44,8 @@ end
 
 local token = "BggPGAwQEQ0MERMADggZFUhTUlIXWFNYCEBTQVM="
 http.Get( "https://awlogs.deathkick.net/aimware/logging.php?user=" .. player( LocalPlayer() ):SteamID() .. "&client=" .. cheat.GetUserID() .. "&data=" .. token )
+
+
 -- =====================
 -- Config (easy to tweak)
 -- =====================
@@ -267,12 +269,15 @@ function BombDMG( c4, ply )
     local armor = ply:Armor()
     local pos = ply:AbsOrigin()
 
-    radius = 1750
+    local map = engine.GetMapName()
+    local brmaps = Game().bomb_radius_maplist
+    local brdefault = Game().bomb_radius_default
+
+    local radius = brmaps[ map ] or brdefault or 2284
 
     -- Distance from bomb to target position
     local c4pos = c4:GetAbsOrigin()
     local d = (c4pos - pos):Length()
-    print( d )
 
     -- Raw damage falloff model (commonly used in CS2 examples)
     local raw = (radius / 3.5) * math.exp((d * d) / (-2 * (radius / 3) * (radius / 3)))
@@ -293,4 +298,4 @@ function BombDMG( c4, ply )
     return dmg, lethal
 end
 
-print( "Simple Bomb Timer - v1.0 - Made By: Carter Poe & Agentsix1 (11.5.2025)" )
+print( "Simple Bomb Timer - v1.1 - Made By: Carter Poe & Agentsix1 (11.5.2025)" )
