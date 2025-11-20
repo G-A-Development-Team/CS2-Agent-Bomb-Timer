@@ -1,6 +1,5 @@
 { 
-  "versions": 
-  [ 
+  "versions": [ 
     { "version": "V1.0", "url": "https://raw.githubusercontent.com/G-A-Development-Team/CS2-Agent-Bomb-Timer/refs/heads/main/bomb-timer.lua" }
   ] 
 }
